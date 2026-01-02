@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8213fb92-1bf0-47c7-a86c-e0e4f4790d44" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/objectRecognition.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+    <list default="true" id="8213fb92-1bf0-47c7-a86c-e0e4f4790d44" name="Changes" comment="Object Recognition">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coco.names" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/face_mesh_app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/face_recognition_app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yolov3-tiny.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yolov3-tiny.weights" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yolov8n.pt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +29,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "yonathanalulam"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/yonathanalulam/objectRecognition.git",
+    "accountId": "a23474f9-2c5d-48e5-ba4e-cda4d4fff9f3"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="36vncihLsqreoUGes6OoXEmX06B" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -43,8 +54,10 @@
   "keyToString": {
     "Python.app.executor": "Run",
     "Python.face_mesh_app.executor": "Run",
+    "Python.face_recognition_app.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -63,6 +76,19 @@
       <option name="presentableId" value="Default" />
       <updated>1765895994104</updated>
     </task>
+    <task id="LOCAL-00001" summary="Object Recognition">
+      <option name="closed" value="true" />
+      <created>1767377591265</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1767377591265</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Object Recognition" />
+    <option name="LAST_COMMIT_MESSAGE" value="Object Recognition" />
   </component>
 </project>
