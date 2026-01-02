@@ -14,15 +14,14 @@ except Exception as e:
 
 # --- 2. CAMERA AND DETECTION LOOP SETUP ---
 
-# Target COCO class indexes we want to highlight
-# 0: person, 67: cell phone, 46: spoon
+
 TARGET_CLASSES = [0, 67, 46]
 
 # Drawing Configuration
 COLORS = {
-    0: (0, 255, 255),  # Cyan for Person
-    67: (255, 0, 255),  # Magenta for Cell Phone
-    46: (0, 255, 0)  # Green for Spoon
+    0: (0, 255, 255), 
+    67: (255, 0, 255),  
+    46: (0, 255, 0)  
 }
 LABELS = {0: 'PERSON', 67: 'CELL PHONE', 46: 'SPOON'}
 
