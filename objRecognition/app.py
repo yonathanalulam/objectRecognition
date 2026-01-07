@@ -18,7 +18,6 @@ except Exception as e:
 np.random.seed(42)
 colors = np.random.uniform(0, 255, size=(len(model.names), 3))
 
-
 #camera setup
 
 cap = cv2.VideoCapture(0)
