@@ -2,7 +2,6 @@ import cv2
 import numpy as np
 from ultralytics import YOLO
 
-
 WEIGHTS_PATH = "yolov8n.pt"
 
 try:
