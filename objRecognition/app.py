@@ -2,10 +2,9 @@ import cv2
 import numpy as np
 from ultralytics import YOLO
 
-# --- 1. CONFIGURATION ---
+
 WEIGHTS_PATH = "yolov8n.pt"
 
-# Initialize YOLO model
 try:
     model = YOLO(WEIGHTS_PATH)
 except Exception as e:
@@ -13,13 +12,15 @@ except Exception as e:
     print("Please ensure the 'yolov8n.pt' file is in the same directory as this script.")
     exit()
 
-# --- 2. DYNAMIC COLOR SETUP ---
+
 # We generate a unique random color for each class the model can detect (80 classes for COCO)
 # We set a seed so the colors remain the same every time you run the app
 np.random.seed(42)
 colors = np.random.uniform(0, 255, size=(len(model.names), 3))
 
-# --- 3. CAMERA SETUP ---
+
+#camera setup
+
 cap = cv2.VideoCapture(0)
 
 if not cap.isOpened():
@@ -29,7 +30,7 @@ if not cap.isOpened():
 print(f"YOLOv8 Model initialized. Detecting {len(model.names)} classes.")
 print("Press 'q' to quit.")
 
-# --- 4. DETECTION LOOP ---
+#Detection Loop
 while True:
     ret, frame = cap.read()
     if not ret:
@@ -38,8 +39,6 @@ while True:
     # Flip frame for a "mirror" effect
     frame = cv2.flip(frame, 1)
 
-    # --- Run YOLOv8 Detection ---
-    # We removed the 'classes=' argument so it detects EVERYTHING
     results = model.track(
         frame,
         conf=0.25,  # Standard confidence threshold (adjust lower if missing objects)
@@ -95,6 +94,6 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# --- 5. CLEANUP ---
+# cleanup
 cap.release()
 cv2.destroyAllWindows()
