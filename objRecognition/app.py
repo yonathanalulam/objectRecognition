@@ -29,7 +29,7 @@ if not cap.isOpened():
 print(f"YOLOv8 Model initialized. Detecting {len(model.names)} classes.")
 print("Press 'q' to quit.")
 
-#Detection Loop
+#detection Loop
 while True:
     ret, frame = cap.read()
     if not ret:
@@ -40,7 +40,7 @@ while True:
 
     results = model.track(
         frame,
-        conf=0.25,  # Standard confidence threshold (adjust lower if missing objects)
+        conf=0.25,  # standard confidence threshold (adjust lower if missing objects)
         persist=True,
         verbose=False,
         imgsz=480
@@ -50,40 +50,39 @@ while True:
         boxes = result.boxes
 
         for box in boxes:
-            # Get coordinates, class ID, and confidence
+            # get coordinates, class ID, and confidence
             x1, y1, x2, y2 = map(int, box.xyxy[0])
             class_id = int(box.cls[0])
             conf = float(box.conf[0])
 
-            # Get the correct label name directly from the model
+            # get the correct label name directly from the model
             label = model.names[class_id].upper()
 
-            # Get the specific color for this class
+            # get the specific color for this class
             color = colors[class_id]
-            # OpenCV uses BGR, and our random colors are float, so we convert them to int tuple
+            # openCV uses BGR, and our random colors are float, so we convert them to int tuple
             bgr_color = (int(color[0]), int(color[1]), int(color[2]))
 
             confidence_text = f"{label} ({round(conf * 100)}%)"
 
-            # Draw rectangle
+            # draw rectangle
             cv2.rectangle(frame, (x1, y1), (x2, y2), bgr_color, 2)
 
-            # Calculate text size for background
             (text_width, text_height), baseline = cv2.getTextSize(confidence_text, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 2)
 
-            # Position the text block above the box
+        
             text_x = x1
             text_y = y1 - 10
 
-            # Adjust text position if it runs off the top of the frame
+        
             if text_y < text_height + 5:
                 text_y = y1 + text_height + 15
 
-            # Draw text background
+  
             cv2.rectangle(frame, (text_x, text_y - text_height - 5), (text_x + text_width + 10, text_y + 5), bgr_color,
                           -1)
 
-            # Draw text (Black text provides best contrast on bright random colors)
+         
             cv2.putText(frame, confidence_text, (text_x + 5, text_y - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 0), 2)
 
     # Display the result
