@@ -12,8 +12,8 @@ except Exception as e:
     exit()
 
 
-# We generate a unique random color for each class the model can detect (80 classes for COCO)
-# We set a seed so the colors remain the same every time you run the app
+#generate a unique random color for each class the model can detect (80 classes for COCO)
+#set a seed so the colors remain the same every time you run the app
 np.random.seed(42)
 colors = np.random.uniform(0, 255, size=(len(model.names), 3))
 
@@ -35,7 +35,7 @@ while True:
     if not ret:
         break
 
-    # Flip frame for a "mirror" effect
+  
     frame = cv2.flip(frame, 1)
 
     results = model.track(
@@ -93,6 +93,6 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-# cleanup
+
 cap.release()
 cv2.destroyAllWindows()
